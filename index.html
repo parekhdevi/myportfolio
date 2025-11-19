@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="gu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maru Portfolio - Devi</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Devi - Software Developer | 21 day internship portfolio" />
+</head>
+<body>
+  <!-- particle canvas (covers whole background) -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a class="logo" href="#home">Devi</a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="controls">
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO / HOME -->
+    <section id="home" class="hero container">
+      <div class="hero-left">
+        <h2 class="role">Hi — I'm <span class="name">Devi</span></h2>
+
+        <!-- Glowing mid-title as requested -->
+        <h1 class="glow-title">
+          <span>Welcome</span>
+          <span class="glow-center">to my profile</span>
+        </h1>
+
+        <p class="intro">
+          I'm a passionate software developer doing a 21-day internship at an
+          Information Technology Centre. I build clean, minimal, and
+          delightful web experiences using HTML, CSS and JavaScript.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn" href="#projects">See Projects</a>
+          <a class="btn ghost" href="#about">About Me</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- Inline SVG avatar (so no external images needed) -->
+        <figure class="avatar" aria-hidden="true">
+          <img src="./images/img1.jpg" alt="">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#0f172a"/>
+                <stop offset="1" stop-color="#7dd3fc"/>
+              </linearGradient>
+              <linearGradient id="g2" x1="0" x2="1">
+                <stop offset="0" stop-color="#ff66b3"/>
+                <stop offset="1" stop-color="#7dd3fc"/>
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" rx="20" fill="url(#g1)"/>
+            <g transform="translate(30,30)">
+              <circle cx="70" cy="50" r="30" fill="url(#g2)"/>
+              <rect x="15" y="100" width="110" height="50" rx="10" fill="#06263b" opacity="0.4"/>
+              <path d="M0 140 Q 70 100 140 140" stroke="#ffffff22" stroke-width="6" fill="none"/>
+            </g>
+          </svg>
+          <figcaption class="sr-only">Devi avatar</figcaption>
+        </figure>
+
+        <!-- small info card -->
+        <div class="info-card">
+          <strong>Role</strong>
+          <p>Software Developer Intern</p>
+          <small>21-day internship @ IT Centre</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT / timeline with year-wise scrolling -->
+    <section id="about" class="about container">
+      <h3 class="section-title">About Me</h3>
+      <p class="lead">Thodu more content with year-wise scrolling events and small live effects.</p>
+
+      <div class="timeline" id="timeline">
+        <!-- Each .event appears when scrolled into view -->
+        <article class="event" data-year="2023">
+          <time>2023</time>
+          <div class="event-body">
+            <h4>Started learning Web Development</h4>
+            <p>Basic HTML, CSS, JS — built small projects and practiced daily.</p>
+          </div>
+        </article>
+
+        <article class="event" data-year="2024">
+          <time>2024</time>
+          <div class="event-body">
+            <h4>Internship & Real Projects</h4>
+            <p>Worked on team tasks, version control and displayed strong curiosity.</p>
+          </div>
+        </article>
+
+        <article class="event" data-year="2025">
+          <time>2025</time>
+          <div class="event-body">
+            <h4>21 Day Intensive Internship</h4>
+            <p>Building this portfolio, refining animations and UX details.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Projects / slider -->
+    <section id="projects" class="projects container">
+      <h3 class="section-title">Projects</h3>
+      <p class="lead">Small slider showcasing 3 items — each can be a project preview.</p>
+
+      <div class="slider" id="proj-slider" aria-roledescription="carousel">
+        <div class="slides">
+          <div class="slide">
+            <h4>Project One</h4>
+            <p>Mini SPA made with vanilla JS — routing, smooth transitions.</p>
+          </div>
+          <div class="slide">
+            <h4>Project Two</h4>
+            <p>Interactive form + validation + neat micro-interactions.</p>
+          </div>
+          <div class="slide">
+            <h4>Project Three</h4>
+            <p>Canvas particle demo & animations (like background).</p>
+          </div>
+        </div>
+
+        <div class="slider-controls">
+          <button id="prev-slide" aria-label="Previous slide">◀</button>
+          <div id="dots" class="dots" aria-hidden="true"></div>
+          <button id="next-slide" aria-label="Next slide">▶</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact container">
+      <h3 class="section-title">Contact</h3>
+      <p class="lead">Want to say hi? Add your real contact here.</p>
+
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Contact form demo — replace with real handler');">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="message" rows="4" placeholder="Message"></textarea>
+        <div class="form-row">
+          <button class="btn">Send</button>
+          <button class="btn ghost" type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <footer class="site-footer container">
+      <p>Made by Devi · Internship Portfolio · © <span id="year"></span></p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

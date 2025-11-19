@@ -1,0 +1,183 @@
+/* style.css
+   Single-file simple modern styles.
+   Colors: navy + pink glow + skyblue (as requested).
+*/
+
+/* CSS variables for theme */
+:root{
+  --bg:#061226;
+  --card: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.03);
+  --text: #e6f0ff;
+  --muted: #9fb7d8;
+  --navy: #071033;            /* deep navy */
+  --pink: #ff66b3;            /* vivid pink (glow) */
+  --sky: #7dd3fc;             /* skyblue */
+  --accent-glow: 0 0 18px rgba(255,102,179,0.14), 0 0 48px rgba(125,211,252,0.06);
+  --card-radius: 14px;
+  --glass-border: rgba(255,255,255,0.04);
+  --transition: 300ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* dark mode (default) and light mode toggler flips the variables */
+:root.light {
+  --bg: #f6fbff;
+  --text: #042033;
+  --card: rgba(4,32,51,0.04);
+  --glass: rgba(4,32,51,0.02);
+  --card-radius: 10px;
+}
+
+/* global resets */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  scroll-behavior:smooth;
+}
+
+/* canvas background full cover */
+#bg-canvas{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  display:block;
+}
+
+/* container */
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:28px;
+  position:relative;
+  z-index:2; /* above canvas */
+}
+
+/* NAV */
+.nav-wrap{position:sticky;top:0;z-index:5;backdrop-filter:saturate(0.9) blur(6px);}
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 0;
+}
+.logo{font-weight:700;letter-spacing:0.6px;color:var(--sky);text-decoration:none}
+.nav-links a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:500}
+.controls button{
+  background:transparent;border:1px solid var(--glass);padding:8px;border-radius:10px;color:var(--text);cursor:pointer;
+  transition:var(--transition)
+}
+.controls button:hover{transform:translateY(-2px)}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap:28px;
+  align-items:center;
+  padding-top:48px;
+  padding-bottom:48px;
+  min-height:70vh;
+}
+
+.hero-left .role{font-size:16px;color:var(--muted);margin:0}
+.hero-left .name{color:var(--sky);font-weight:700}
+.glow-title{
+  font-size:34px;
+  margin:10px 0;
+  line-height:1.02;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.glow-title .glow-center{
+  padding:8px 14px;
+  border-radius:999px;
+  color:white;
+  background: linear-gradient(90deg,var(--pink),var(--sky));
+  box-shadow: 0 8px 32px rgba(7,16,51,0.35), 0 0 24px rgba(255,102,179,0.14), 0 0 54px rgba(125,211,252,0.06);
+  transform:translateY(-2px);
+  font-weight:700;
+}
+
+/* Intro text */
+.intro{color:var(--muted);max-width:58ch;margin-top:12px}
+
+/* CTA */
+.cta-row{display:flex;gap:12px;margin-top:18px}
+.btn{
+  display:inline-block;padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--navy),rgba(7,16,51,0.85));
+  color:var(--sky);text-decoration:none;border:1px solid rgba(125,211,252,0.06);font-weight:600;transition:var(--transition)
+}
+.btn:hover{transform:translateY(-4px)}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+
+/* HERO RIGHT - avatar + info */
+.hero-right{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  justify-content:flex-end;
+}
+.avatar{width:420px;height:320px;border-radius:18px;overflow:hidden;box-shadow:var(--accent-glow);border:1px solid var(--glass)}
+.info-card{background: linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:16px;border-radius:12px;min-width:160px;text-align:left}
+.info-card strong{display:block;color:var(--sky);font-size:13px}
+.info-card p{margin:6px 0 2px}
+.info-card small{display:block;color:var(--muted)}
+
+/* About section */
+.section-title{font-size:20px;margin-bottom:8px;color:var(--sky)}
+.lead{color:var(--muted);margin-bottom:18px}
+
+/* timeline */
+.timeline{display:flex;flex-direction:column;gap:18px}
+.event{
+  display:grid;
+  grid-template-columns:80px 1fr;
+  gap:12px;
+  align-items:center;
+  background:var(--card);
+  padding:12px;
+  border-radius:12px;
+  border:1px solid var(--glass-border);
+  transition: transform 420ms cubic-bezier(.2,.9,.2,1), box-shadow 420ms;
+  transform-origin:left center;
+  opacity:0; transform:translateX(-40px) scale(0.99);
+}
+.event.in-view{opacity:1;transform:translateX(0) scale(1);box-shadow:var(--accent-glow)}
+.event time{font-weight:700;color:var(--pink);font-size:16px}
+.event-body h4{margin:0 0 6px}
+.event-body p{margin:0;color:var(--muted)}
+
+/* slider */
+.slider{background:var(--card);padding:18px;border-radius:12px;border:1px solid var(--glass-border)}
+.slides{display:flex;transition:transform 480ms cubic-bezier(.2,.9,.2,1);gap:18px}
+.slide{min-width:280px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:10px}
+.slider-controls{display:flex;align-items:center;gap:8px;margin-top:12px;justify-content:center}
+.slider-controls button{padding:8px 10px;border-radius:8px;border:1px solid var(--glass-border);background:transparent;color:var(--text);cursor:pointer}
+.dots{display:flex;gap:6px}
+.dots button{width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,0.08);border:none}
+
+/* contact form */
+.contact-form{display:flex;flex-direction:column;gap:10px;max-width:600px}
+.contact-form input, .contact-form textarea{background:transparent;border:1px solid var(--glass-border);padding:12px;border-radius:10px;color:var(--text)}
+.form-row{display:flex;gap:10px}
+
+/* footer */
+.site-footer{padding:30px 0;text-align:center;color:var(--muted);font-size:14px}
+
+/* responsiveness */
+@media (max-width:920px){
+  .hero{grid-template-columns:1fr;min-height:unset;padding-top:28px}
+  .hero-right{justify-content:flex-start;margin-top:16px}
+}
+
+/* small accessibility helper */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
