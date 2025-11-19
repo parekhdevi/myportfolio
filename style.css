@@ -126,7 +126,7 @@ body{
   gap:14px;
   justify-content:flex-end;
 }
-.avatar{width:420px;height:320px;border-radius:18px;overflow:hidden;box-shadow:var(--accent-glow);border:1px solid var(--glass)}
+.avatar{width:10px;height:10px;border-radius:18px;box-shadow:var(--accent-glow);border:1px solid var(--glass)}
 .info-card{background: linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:16px;border-radius:12px;min-width:160px;text-align:left}
 .info-card strong{display:block;color:var(--sky);font-size:13px}
 .info-card p{margin:6px 0 2px}
