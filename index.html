@@ -1,171 +1,167 @@
-<!doctype html>
-<html lang="gu">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Maru Portfolio - Devi</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="Devi - Software Developer | 21 day internship portfolio" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devi's Profile | Software Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <!-- particle canvas (covers whole background) -->
-  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-  <header class="nav-wrap">
-    <nav class="nav container">
-      <a class="logo" href="#home">Devi</a>
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="controls">
-        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-      </div>
+    <div id="particles-js"></div>
+
+    <nav class="navbar">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#tech" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
     </nav>
-  </header>
+    
+    <button id="dark-mode-toggle" class="mode-toggle" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
 
-  <main>
-    <!-- HERO / HOME -->
-    <section id="home" class="hero container">
-      <div class="hero-left">
-        <h2 class="role">Hi — I'm <span class="name">Devi</span></h2>
+    <div class="main-content-wrapper">
 
-        <!-- Glowing mid-title as requested -->
-        <h1 class="glow-title">
-          <span>Welcome</span>
-          <span class="glow-center">to my profile</span>
-        </h1>
+        <header id="home" class="section home">
+            <div class="header-content">
+                <div class="text-content">
+                    <h1 class="glow-title">
+                        <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span>
+                        <span> </span>
+                        <span>t</span><span>o</span>
+                        <span> </span>
+                        <span>m</span><span>y</span>
+                        <span> </span>
+                        <span>P</span><span>r</span><span>o</span><span>f</span><span>i</span><span>l</span><span>e</span>
+                    </h1>
+                    <div class="intro-paragraph">
+                        <p>Hello! I am **Devi**, an enthusiastic Software Developer recently completing a 21-day intensive internship at the Information Technology Centre (ITC). I am passionate about crafting unique and user-friendly web applications, built on a strong foundation of HTML, CSS, and JavaScript. My commitment to continuous learning and bringing a positive impact through technology drives me to excel in every project I undertake.</p>
+                        <a href="#about" class="cta-button">Explore My Journey</a>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="placeholder_devi.jpg" alt="Devi - Software Developer Profile Image">
+                    <div class="image-border-glow"></div>
+                </div>
+            </div>
+        </header>
 
-        <p class="intro">
-          I'm a passionate software developer doing a 21-day internship at an
-          Information Technology Centre. I build clean, minimal, and
-          delightful web experiences using HTML, CSS and JavaScript.
-        </p>
+        <section id="about" class="section about">
+            <h2 class="section-title">✨ About Me - My Timeline</h2>
+            <div class="timeline-container">
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2024: Internship Completion</h3>
+                        <p>Successfully completed a rigorous 21-day internship at the Information Technology Centre (ITC), focusing on modern web development methodologies and project delivery.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2023: Core Coding Foundation</h3>
+                        <p>Established a robust foundation in core web technologies: HTML5, CSS3, and Vanilla JavaScript. Initiated work on first independent front-end projects.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2022: Academic Commencement</h3>
+                        <p>Began studies in Computer Science. Started exploring Data Structures, Algorithms, and the fundamental principles of software engineering.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="cta-row">
-          <a class="btn" href="#projects">See Projects</a>
-          <a class="btn ghost" href="#about">About Me</a>
-        </div>
-      </div>
+        <section id="tech" class="section tech">
+            <h2 class="section-title">💡 My Core Technologies</h2>
+            <div class="tech-grid">
+                <div class="tech-item" data-tech="HTML5">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="tech-item" data-tech="CSS3">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="tech-item" data-tech="JavaScript">
+                    <i class="fab fa-js-square"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="tech-item" data-tech="React">
+                    <i class="fab fa-react"></i>
+                    <span>React</span>
+                </div>
+                <div class="tech-item" data-tech="Bootstrap">
+                    <i class="fab fa-bootstrap"></i>
+                    <span>Bootstrap</span>
+                </div>
+                <div class="tech-item" data-tech="Django">
+                    <i class="fab fa-python"></i>
+                    <span>Django</span>
+                </div>
+                <div class="tech-item" data-tech="GitHub">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </div>
+            </div>
+        </section>
 
-      <div class="hero-right">
-        <!-- Inline SVG avatar (so no external images needed) -->
-        <figure class="avatar" aria-hidden="true">
-          <img src="./images/img1.jpg" alt="">
-            <defs>
-              <linearGradient id="g1" x1="0" x2="1">
-                <stop offset="0" stop-color="#0f172a"/>
-                <stop offset="1" stop-color="#7dd3fc"/>
-              </linearGradient>
-              <linearGradient id="g2" x1="0" x2="1">
-                <stop offset="0" stop-color="#ff66b3"/>
-                <stop offset="1" stop-color="#7dd3fc"/>
-              </linearGradient>
-            </defs>
-            <rect width="100%" height="100%" rx="20" fill="url(#g1)"/>
-            <g transform="translate(30,30)">
-              <circle cx="70" cy="50" r="30" fill="url(#g2)"/>
-              <rect x="15" y="100" width="110" height="50" rx="10" fill="#06263b" opacity="0.4"/>
-              <path d="M0 140 Q 70 100 140 140" stroke="#ffffff22" stroke-width="6" fill="none"/>
-            </g>
-          </svg>
-          <figcaption class="sr-only">Devi avatar</figcaption>
-        </figure>
+        <section id="projects" class="section projects">
+            <h2 class="section-title">🏆 Projects & Achievements</h2>
+            <div class="projects-slider">
+                <div class="project-card">
+                    <h3>ITC Internship Portfolio</h3>
+                    <p>A responsive single-page portfolio built using HTML, CSS, and JS, demonstrating clean code and modern design principles.</p>
+                    <a href="#" class="project-link" target="_blank">View Project <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="project-card certificate-card">
+                    <h3>Certificate: Web Development Basics</h3>
+                    <p>Successfully completed a course on front-end development, covering essential concepts of UI/UX design and responsiveness.</p>
+                    <a href="#" class="project-link" target="_blank">View Credential <i class="fas fa-certificate"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3>Concept Project: E-commerce UI</h3>
+                    <p>A clean, mobile-first UI prototype for a modern e-commerce platform, focusing on accessibility and performance.</p>
+                    <a href="#" class="project-link" target="_blank">View Concept <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
 
-        <!-- small info card -->
-        <div class="info-card">
-          <strong>Role</strong>
-          <p>Software Developer Intern</p>
-          <small>21-day internship @ IT Centre</small>
-        </div>
-      </div>
-    </section>
+        <section id="contact" class="section contact">
+            <h2 class="section-title">📬 Get In Touch</h2>
+            <div class="contact-container">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Your Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message"><i class="fas fa-comment-alt"></i> Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button submit-button">Send Message <i class="fas fa-paper-plane"></i></button>
+                    <p id="form-message" class="form-message"></p>
+                </form>
+            </div>
+        </section>
 
-    <!-- ABOUT / timeline with year-wise scrolling -->
-    <section id="about" class="about container">
-      <h3 class="section-title">About Me</h3>
-      <p class="lead">Thodu more content with year-wise scrolling events and small live effects.</p>
+        <footer>
+            <p>&copy; 2025 Devi. All Rights Reserved. | Designed with 💙 in HTML, CSS & JS</p>
+        </footer>
 
-      <div class="timeline" id="timeline">
-        <!-- Each .event appears when scrolled into view -->
-        <article class="event" data-year="2023">
-          <time>2023</time>
-          <div class="event-body">
-            <h4>Started learning Web Development</h4>
-            <p>Basic HTML, CSS, JS — built small projects and practiced daily.</p>
-          </div>
-        </article>
+    </div>
 
-        <article class="event" data-year="2024">
-          <time>2024</time>
-          <div class="event-body">
-            <h4>Internship & Real Projects</h4>
-            <p>Worked on team tasks, version control and displayed strong curiosity.</p>
-          </div>
-        </article>
-
-        <article class="event" data-year="2025">
-          <time>2025</time>
-          <div class="event-body">
-            <h4>21 Day Intensive Internship</h4>
-            <p>Building this portfolio, refining animations and UX details.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Projects / slider -->
-    <section id="projects" class="projects container">
-      <h3 class="section-title">Projects</h3>
-      <p class="lead">Small slider showcasing 3 items — each can be a project preview.</p>
-
-      <div class="slider" id="proj-slider" aria-roledescription="carousel">
-        <div class="slides">
-          <div class="slide">
-            <h4>Project One</h4>
-            <p>Mini SPA made with vanilla JS — routing, smooth transitions.</p>
-          </div>
-          <div class="slide">
-            <h4>Project Two</h4>
-            <p>Interactive form + validation + neat micro-interactions.</p>
-          </div>
-          <div class="slide">
-            <h4>Project Three</h4>
-            <p>Canvas particle demo & animations (like background).</p>
-          </div>
-        </div>
-
-        <div class="slider-controls">
-          <button id="prev-slide" aria-label="Previous slide">◀</button>
-          <div id="dots" class="dots" aria-hidden="true"></div>
-          <button id="next-slide" aria-label="Next slide">▶</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact container">
-      <h3 class="section-title">Contact</h3>
-      <p class="lead">Want to say hi? Add your real contact here.</p>
-
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Contact form demo — replace with real handler');">
-        <input type="text" name="name" placeholder="Name" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <textarea name="message" rows="4" placeholder="Message"></textarea>
-        <div class="form-row">
-          <button class="btn">Send</button>
-          <button class="btn ghost" type="reset">Reset</button>
-        </div>
-      </form>
-    </section>
-
-    <footer class="site-footer container">
-      <p>Made by Devi · Internship Portfolio · © <span id="year"></span></p>
-    </footer>
-  </main>
-
-  <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
